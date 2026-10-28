@@ -1,0 +1,15 @@
+int called = 0;
+int trigger() {
+    called = 1;
+    return 1;
+}
+
+int main() {
+    int a = 0;
+    if (a != 0 && trigger()) {
+        putint(999);
+    }
+    putint(called);
+    putch(10);
+    return called;
+}

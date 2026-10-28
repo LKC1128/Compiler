@@ -1,0 +1,1 @@
+int main(){float x=getfloat();if(x!=0.0)putint(1);else putint(0);putch(32);if(!x)putint(1);else putint(0);putch(10);return 0;}

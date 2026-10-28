@@ -1,0 +1,1 @@
+int main(){tensor float a[2];a=-0.0;putfloat(a[0]);putch(32);a=-a;putfloat(a[0]);putch(10);return 0;}

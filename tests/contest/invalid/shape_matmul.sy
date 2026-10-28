@@ -1,0 +1,1 @@
+int main(){tensor int a[2][3];tensor int b[2][2];tensor int c[2][2];c=a@b;return 0;}

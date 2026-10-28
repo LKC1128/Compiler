@@ -1,0 +1,16 @@
+int main() {
+    tensor int a[4] = {1, 2, 3, 4};
+    tensor int b[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    tensor float c[3] = {1.0, 2.0, 3.0};
+
+    putint(a[0]);
+    putch(10);
+    putint(a[3]);
+    putch(10);
+    putint(b[0][0]);
+    putch(10);
+    putint(b[1][2]);
+    putch(10);
+
+    return 0;
+}

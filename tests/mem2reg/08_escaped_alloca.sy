@@ -1,0 +1,10 @@
+void fill(int arr[]) {
+    arr[0] = 40;
+    arr[1] = 2;
+}
+
+int main() {
+    int arr[2]; // stack array: its alloca must NOT be promoted to SSA
+    fill(arr);
+    return arr[0] + arr[1]; // 42
+}

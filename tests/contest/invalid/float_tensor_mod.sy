@@ -1,0 +1,1 @@
+int main(){tensor float a[2]={1,2};a=a%2;return 0;}

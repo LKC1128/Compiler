@@ -1,0 +1,1 @@
+int main(){const tensor int a[3]={0,2,-3};tensor int b[3]=+a;b=!b;putarray(3,b);return 0;}

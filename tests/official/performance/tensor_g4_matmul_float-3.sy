@@ -1,0 +1,50 @@
+tensor float left[864][864];
+tensor float right[864][864];
+tensor float result[864][864];
+
+float abs_float(float value) {
+    if (value < 0.0) {
+        return -value;
+    }
+    return value;
+}
+
+int main() {
+    int seed = getint();
+    int i = 0;
+    while (i < 864) {
+        int j = 0;
+        while (j < 864) {
+            left[i][j] = ((i + seed) % 7 + 1) * 0.25;
+            right[i][j] = ((j + seed) % 5 + 1) * 0.5;
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+
+    starttime();
+    result = left @ right;
+
+    int bad = 0;
+    i = 0;
+    while (i < 864) {
+        int j = 0;
+        while (j < 864) {
+            float expected = 864 * (((i + seed) % 7 + 1) * 0.25) * (((j + seed) % 5 + 1) * 0.5);
+            if (abs_float(result[i][j] - expected) > 0.01) {
+                bad = bad + 1;
+            }
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+
+    stoptime();
+    if (bad == 0) {
+        putint(1);
+    } else {
+        putint(0);
+    }
+    putch(10);
+    return 0;
+}

@@ -1,0 +1,1 @@
+int main(){tensor float a[2]={1.5,-2.5};tensor int b[2]={2,4};tensor int c[2];c=a*b;putarray(2,c);return 0;}

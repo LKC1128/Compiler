@@ -1,0 +1,18 @@
+// 测试6: 张量取模运算
+int main() {
+    tensor int a[4] = {1, 2, 3, 4};
+    tensor int e[4];
+
+    e = a % 3;
+
+    putint(e[0]);
+    putch(32);
+    putint(e[1]);
+    putch(32);
+    putint(e[2]);
+    putch(32);
+    putint(e[3]);
+    putch(10);
+
+    return 0;
+}

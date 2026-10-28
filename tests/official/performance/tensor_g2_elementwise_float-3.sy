@@ -1,0 +1,46 @@
+tensor float a[524288];
+tensor float b[524288];
+tensor float c[524288];
+
+float abs_float(float value) {
+    if (value < 0.0) {
+        return -value;
+    }
+    return value;
+}
+
+int main() {
+    int seed = getint();
+    int i = 0;
+    while (i < 524288) {
+        a[i] = ((i + seed) % 31) * 0.25;
+        b[i] = ((i * 5 + seed) % 29) * 0.5;
+        i = i + 1;
+    }
+
+    starttime();
+    c = a + b * 1.5 - 0.25;
+
+    int bad = 0;
+    int round = 0;
+    while (round < 1300) {
+        i = 0;
+        while (i < 524288) {
+            float expected = a[i] + b[i] * 1.5 - 0.25;
+            if (abs_float(c[i] - expected) > 0.0001) {
+                bad = bad + 1;
+            }
+            i = i + 1;
+        }
+        round = round + 1;
+    }
+
+    stoptime();
+    if (bad == 0) {
+        putint(1);
+    } else {
+        putint(0);
+    }
+    putch(10);
+    return 0;
+}

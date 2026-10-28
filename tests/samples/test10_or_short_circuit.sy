@@ -1,0 +1,16 @@
+int called = 0;
+int trigger() {
+    called = 1;
+    return 1;
+}
+
+int main() {
+    int a = 1;
+    if (a == 1 || trigger()) {
+        putint(888);
+        putch(10);
+    }
+    putint(called);
+    putch(10);
+    return called;
+}

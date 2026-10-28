@@ -1,0 +1,11 @@
+int main() {
+    float f = 1.0;
+    int i = 0;
+    while (i < 3) {
+        f = f * 2.0;
+        i = i + 1;
+    }
+    // f = 8.0, cast to int 8
+    int res = f;
+    return res;
+}

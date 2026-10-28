@@ -1,0 +1,1 @@
+int getint=7;int main(){putint(getint+getint());return 0;}

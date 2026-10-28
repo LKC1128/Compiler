@@ -1,0 +1,8 @@
+int foo(int a, int b) {
+    int x = (a + b) * (a + b);
+    int y = (a + b) + 5;
+    return x + y;
+}
+int main() {
+    return foo(3, 4);
+}

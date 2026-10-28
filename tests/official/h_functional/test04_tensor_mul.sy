@@ -1,0 +1,19 @@
+// 测试4: 张量逐元素乘法
+int main() {
+    tensor int a[4] = {1, 2, 3, 4};
+    tensor int b[4] = {5, 6, 7, 8};
+    tensor int d[4];
+
+    d = a * b;
+
+    putint(d[0]);
+    putch(32);
+    putint(d[1]);
+    putch(32);
+    putint(d[2]);
+    putch(32);
+    putint(d[3]);
+    putch(10);
+
+    return 0;
+}

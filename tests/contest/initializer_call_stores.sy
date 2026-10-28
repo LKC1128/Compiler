@@ -1,0 +1,1 @@
+int tick=0;int next(){tick=tick+1;return tick;}int main(){int a[3]={next(),next(),next()};putint(a[0]+a[1]+a[2]);putch(32);putint(tick);int b[65]={next(),0};putch(32);putint(b[0]);putch(32);putint(b[1]);putch(32);putint(tick);putch(10);return 0;}

@@ -1,0 +1,19 @@
+// 测试2: 张量加法运算（逐元素）
+int main() {
+    tensor int a[4] = {1, 2, 3, 4};
+    tensor int b[4] = {5, 6, 7, 8};
+    tensor int c[4];
+
+    c = a + b;
+
+    putint(c[0]);
+    putch(32);
+    putint(c[1]);
+    putch(32);
+    putint(c[2]);
+    putch(32);
+    putint(c[3]);
+    putch(10);
+
+    return 0;
+}

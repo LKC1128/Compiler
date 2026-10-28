@@ -1,0 +1,43 @@
+tensor int left[928][928];
+tensor int right[928][928];
+tensor int result[928][928];
+
+int main() {
+    int seed = getint();
+    int i = 0;
+    while (i < 928) {
+        int j = 0;
+        while (j < 928) {
+            left[i][j] = (i + seed) % 7 + 1;
+            right[i][j] = (j + seed) % 5 + 1;
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+
+    starttime();
+    result = left @ right;
+
+    int bad = 0;
+    i = 0;
+    while (i < 928) {
+        int j = 0;
+        while (j < 928) {
+            int expected = 928 * ((i + seed) % 7 + 1) * ((j + seed) % 5 + 1);
+            if (result[i][j] != expected) {
+                bad = bad + 1;
+            }
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+
+    stoptime();
+    if (bad == 0) {
+        putint(1);
+    } else {
+        putint(0);
+    }
+    putch(10);
+    return 0;
+}

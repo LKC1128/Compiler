@@ -1,0 +1,7 @@
+int main(){
+starttime();
+putint(7);
+stoptime();
+putch(10);
+return 0;
+}

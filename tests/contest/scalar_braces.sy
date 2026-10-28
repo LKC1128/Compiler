@@ -1,0 +1,1 @@
+const int g={3};float h={{1.5}};int main(){const int c={{4}};int a={{5}};float z={};putint(g+c+a);putch(32);putfloat(h+z);putch(10);return 0;}

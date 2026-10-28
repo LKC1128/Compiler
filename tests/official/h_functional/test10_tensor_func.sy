@@ -1,0 +1,29 @@
+// 测试10: 张量作为函数参数和返回值
+tensor int add_tensors(tensor int a[], tensor int b[], int len) {
+    tensor int result[10];
+    int i = 0;
+    while (i < len) {
+        result[i] = a[i] + b[i];
+        i = i + 1;
+    }
+    return result;
+}
+
+int main() {
+    tensor int x[4] = {1, 2, 3, 4};
+    tensor int y[4] = {10, 20, 30, 40};
+    tensor int z[10];
+
+    z = add_tensors(x, y, 4);
+
+    putint(z[0]);
+    putch(32);
+    putint(z[1]);
+    putch(32);
+    putint(z[2]);
+    putch(32);
+    putint(z[3]);
+    putch(10);
+
+    return 0;
+}

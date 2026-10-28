@@ -1,0 +1,55 @@
+Running 50 tests from tests/official/h_functional (Opt: -O1)...
+[  1/ 50] 00_comment2.sy                      PASSED
+[  2/ 50] 01_multiple_returns.sy              PASSED
+[  3/ 50] 02_ret_in_block.sy                  PASSED
+[  4/ 50] 03_branch.sy                        PASSED
+[  5/ 50] 04_break_continue.sy                PASSED
+[  6/ 50] 05_param_name.sy                    PASSED
+[  7/ 50] 06_func_name.sy                     PASSED
+[  8/ 50] 07_arr_init_nd.sy                   PASSED
+[  9/ 50] 08_global_arr_init.sy               PASSED
+[ 10/ 50] 09_BFS.sy                           PASSED
+[ 11/ 50] 10_DFS.sy                           PASSED
+[ 12/ 50] 11_BST.sy                           PASSED
+[ 13/ 50] 12_DSU.sy                           PASSED
+[ 14/ 50] 13_LCA.sy                           PASSED
+[ 15/ 50] 14_dp.sy                            PASSED
+[ 16/ 50] 15_graph_coloring.sy                PASSED
+[ 17/ 50] 16_k_smallest.sy                    PASSED
+[ 18/ 50] 17_maximal_clique.sy                PASSED
+[ 19/ 50] 18_prim.sy                          PASSED
+[ 20/ 50] 19_search.sy                        PASSED
+[ 21/ 50] 20_sort.sy                          PASSED
+[ 22/ 50] 21_union_find.sy                    PASSED
+[ 23/ 50] 22_matrix_multiply.sy               PASSED
+[ 24/ 50] 23_json.sy                          PASSED
+[ 25/ 50] 24_array_only.sy                    PASSED
+[ 26/ 50] 25_scope3.sy                        PASSED
+[ 27/ 50] 26_scope4.sy                        PASSED
+[ 28/ 50] 27_scope5.sy                        PASSED
+[ 29/ 50] 28_side_effect2.sy                  PASSED
+[ 30/ 50] 29_long_line.sy                     PASSED
+[ 31/ 50] 30_many_dimensions.sy               PASSED
+[ 32/ 50] 31_many_indirections.sy             PASSED
+[ 33/ 50] 32_many_params3.sy                  PASSED
+[ 34/ 50] 33_multi_branch.sy                  PASSED
+[ 35/ 50] 34_multi_loop.sy                    PASSED
+[ 36/ 50] 35_math.sy                          PASSED
+[ 37/ 50] 36_rotate.sy                        PASSED
+[ 38/ 50] 37_dct.sy                           PASSED
+[ 39/ 50] 38_light2d.sy                       PASSED
+[ 40/ 50] 39_fp_params.sy                     PASSED
+[ 41/ 50] test01_tensor_decl.sy               PASSED
+[ 42/ 50] test02_tensor_add.sy                PASSED
+[ 43/ 50] test03_tensor_scalar.sy             PASSED
+[ 44/ 50] test04_tensor_mul.sy                PASSED
+[ 45/ 50] test05_tensor_matmul.sy             PASSED
+[ 46/ 50] test06_tensor_mod.sy                PASSED
+[ 47/ 50] test07_tensor_div.sy                PASSED
+[ 48/ 50] test08_tensor_sub_neg.sy            PASSED
+[ 49/ 50] test09_tensor_float.sy              PASSED
+[ 50/ 50] test10_tensor_func.sy               PASSED
+
+======================================================================
+RESULTS: 50/50 passed (100.0%), 0 failed.
+======================================================================

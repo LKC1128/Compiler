@@ -1,0 +1,84 @@
+// Flood Fill algorithm on 2D grid (variant 2)
+int grid[400][400];
+int visited[400][400];
+int queue_r[160000];
+int queue_c[160000];
+
+void flood_fill(int n, int sr, int sc, int target, int replacement) {
+    if (grid[sr][sc] != target) return;
+    
+    int head = 0;
+    int tail = 0;
+    queue_r[tail] = sr;
+    queue_c[tail] = sc;
+    tail = tail + 1;
+    visited[sr][sc] = 1;
+    
+    while (head < tail) {
+        int r = queue_r[head];
+        int c = queue_c[head];
+        head = head + 1;
+        
+        grid[r][c] = replacement;
+        
+        int dr[4]; dr[0] = -1; dr[1] = 1; dr[2] = 0; dr[3] = 0;
+        int dc[4]; dc[0] = 0; dc[1] = 0; dc[2] = -1; dc[3] = 1;
+        
+        int d = 0;
+        while (d < 4) {
+            int nr = r + dr[d];
+            int nc = c + dc[d];
+            if (nr >= 0 && nr < n && nc >= 0 && nc < n) {
+                if (grid[nr][nc] == target && visited[nr][nc] == 0) {
+                    visited[nr][nc] = 1;
+                    queue_r[tail] = nr;
+                    queue_c[tail] = nc;
+                    tail = tail + 1;
+                }
+            }
+            d = d + 1;
+        }
+    }
+}
+
+int main() {
+    int n = getint();
+    n = 380;
+    int seed = getint();
+    
+    starttime();
+    
+    int i = 0;
+    while (i < n) {
+        int j = 0;
+        while (j < n) {
+            grid[i][j] = (i * 11 + j * 19 + seed) % 4;
+            visited[i][j] = 0;
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+    
+    int rounds = 3600;
+    while (rounds > 0) {
+        flood_fill(n, n/4, n/4, 1, 8);
+        flood_fill(n, n/2, n/2, 2, 7);
+        rounds = rounds - 1;
+    }
+    
+    int sum = 0;
+    i = 0;
+    while (i < n) {
+        int j = 0;
+        while (j < n) {
+            sum = sum + grid[i][j];
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+    
+    stoptime();
+    putint(sum);
+    putch(10);
+    return 0;
+}

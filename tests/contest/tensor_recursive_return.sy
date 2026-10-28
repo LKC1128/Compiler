@@ -1,0 +1,2 @@
+tensor int rec(tensor int a[],int n){if(n==0)return a;return rec(a+1,n-1);}
+int main(){tensor int a[3]={2,4,6};tensor int b[3]=rec(a,3);putarray(3,b);return 0;}

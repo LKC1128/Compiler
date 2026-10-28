@@ -1,0 +1,19 @@
+int main() {
+    int a = 10;
+    int b = 20;
+    int c = 30;
+    int cond = 1;
+    if (cond) {
+        a = 100;
+        if (a > 50) {
+            b = 200;
+        } else {
+            b = 300;
+        }
+        c = 400;
+    } else {
+        a = 500;
+        b = 600;
+    }
+    return a + b + c; // 100 + 200 + 400 = 700
+}

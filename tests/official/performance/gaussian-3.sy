@@ -1,0 +1,92 @@
+// Gaussian Elimination (浮点版本 variant 3)
+float A[128][129];
+
+void gaussian_elimination(int n) {
+    int i = 0;
+    while (i < n) {
+        int max_row = i;
+        int j = i + 1;
+        while (j < n) {
+            float abs_curr = A[j][i];
+            float abs_max = A[max_row][i];
+            if (abs_curr < 0.0) abs_curr = -abs_curr;
+            if (abs_max < 0.0) abs_max = -abs_max;
+            if (abs_curr > abs_max) {
+                max_row = j;
+            }
+            j = j + 1;
+        }
+
+        int k = 0;
+        while (k <= n) {
+            float temp = A[i][k];
+            A[i][k] = A[max_row][k];
+            A[max_row][k] = temp;
+            k = k + 1;
+        }
+
+        j = i + 1;
+        while (j < n) {
+            if (A[i][i] != 0.0) {
+                float factor = A[j][i] / A[i][i];
+                k = i;
+                while (k <= n) {
+                    A[j][k] = A[j][k] - factor * A[i][k];
+                    k = k + 1;
+                }
+            }
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+}
+
+float fabs_custom(float x) {
+    if (x < 0.0) return -x;
+    return x;
+}
+
+int main() {
+    int n = getint();
+    int seed = getint();
+
+    starttime();
+
+    int i = 0;
+    while (i < n) {
+        int j = 0;
+        while (j <= n) {
+            A[i][j] = (i * 29 + j * 23 + seed) % 100 + 1;
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+
+    int rep = 0;
+    while (rep < 1000) {
+        gaussian_elimination(n);
+        rep = rep + 1;
+    }
+
+    float sum = 0.0;
+    i = 0;
+    while (i < n) {
+        sum = sum + A[i][i];
+        i = i + 1;
+    }
+
+    stoptime();
+
+    float expected = 9935.44;
+    float diff = fabs_custom(sum - expected);
+    float tolerance = 5.0;
+
+    int result = 0;
+    if (diff <= tolerance) {
+        result = 1;
+    }
+
+    putint(result);
+    putch(10);
+    return 0;
+}

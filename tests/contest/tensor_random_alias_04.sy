@@ -1,0 +1,1 @@
+int main(){tensor int a[1][1]={{-3}};tensor int b[1][1]={{2}};a=a@b;b=b@a;putarray(1,a[0]);putarray(1,b[0]);return 0;}

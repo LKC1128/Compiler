@@ -1,0 +1,1 @@
+int f=3;int f(int f){return f+1;}int main(){int x=f;int f=8;putint(f+f(x));return 0;}

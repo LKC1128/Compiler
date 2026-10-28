@@ -1,0 +1,1 @@
+int malloc=3;int free=4;int exit=5;int memset=6;int main(){tensor int a[2]={3,4};tensor int b[2];b=a+1;int z[2]={};putint(malloc+free+exit+memset+b[0]+z[0]);return 0;}

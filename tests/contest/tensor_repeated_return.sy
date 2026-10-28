@@ -1,0 +1,2 @@
+tensor int f(int v){tensor int a[16];int i=0;while(i<16){a[i]=v+i;i=i+1;}return a;}
+int main(){tensor int a[16];int i=0;while(i<500){a=f(i);i=i+1;}putint(a[15]);putch(10);f(0);return 0;}

@@ -1,0 +1,81 @@
+// Bitonic Sort (浮点版本)
+float arr[32768];
+
+void compare_swap(int i, int j, int dir) {
+    if (dir == 1) {
+        if (arr[i] > arr[j]) {
+            float temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    } else {
+        if (arr[i] < arr[j]) {
+            float temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+}
+
+void bitonic_merge(int low, int cnt, int dir) {
+    if (cnt > 1) {
+        int k = cnt / 2;
+        int i = low;
+        while (i < low + k) {
+            compare_swap(i, i + k, dir);
+            i = i + 1;
+        }
+        bitonic_merge(low, k, dir);
+        bitonic_merge(low + k, k, dir);
+    }
+}
+
+void bitonic_sort_rec(int low, int cnt, int dir) {
+    if (cnt > 1) {
+        int k = cnt / 2;
+        bitonic_sort_rec(low, k, 1);
+        bitonic_sort_rec(low + k, k, 0);
+        bitonic_merge(low, cnt, dir);
+    }
+}
+
+float fabs_custom(float x) {
+    if (x < 0.0) return -x;
+    return x;
+}
+
+int main() {
+    int n = getint();
+    int seed = getint();
+
+    starttime();
+
+    int i = 0;
+    while (i < n) {
+        arr[i] = (i * 31 + seed) % 10000 * 1.0 / 1000.0;
+        i = i + 1;
+    }
+
+    int rep = 0;
+    while (rep < 510) {
+        bitonic_sort_rec(0, n, 1);
+        rep = rep + 1;
+    }
+
+    float diff_sum = arr[n - 1] - arr[0];
+
+    stoptime();
+
+    float expected = 9.999;
+    float diff = fabs_custom(diff_sum - expected);
+    float tolerance = 0.01;
+
+    int result = 0;
+    if (diff <= tolerance) {
+        result = 1;
+    }
+
+    putint(result);
+    putch(10);
+    return 0;
+}

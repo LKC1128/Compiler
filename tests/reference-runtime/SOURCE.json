@@ -1,0 +1,9 @@
+{
+  "source": "https://gitlab.eduxiji.net/csc1/nscscc/compiler2022",
+  "commit": "20efa6ad75505ccfc1dcbf1c0f632929b0232fc0",
+  "note": "Unmodified organizer SysY runtime, rebuilt locally for AArch64; not asserted to be the exact board library.",
+  "files": {
+    "sylib.c": "e107cdefe003f1efbff2d62a07da66db4d496d5dd20e46128338ce39c26fba30",
+    "sylib.h": "addec63cea1fd692f1435aa0ced0997c20a8a89029f7d7ae27f8cdbfcf7ed0a6"
+  }
+}

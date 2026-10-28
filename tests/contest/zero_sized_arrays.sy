@@ -1,0 +1,3 @@
+int global[2][0][3]={{},{}};
+tensor int multiply(tensor int a[][0],tensor int b[][2]){return a@b;}
+int main(){int a[2][0]={{},{}};tensor int x[2][0]={{},{}};tensor int y[0][2]={};tensor int z[2][2];z=multiply(x,y);putarray(2,z[0]);putarray(2,z[1]);tensor int e[0];e=e+1;return 0;}

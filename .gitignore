@@ -1,0 +1,8 @@
+build/
+
+build-*/
+dist/
+/compiler
+*.o
+*.pyc
+__pycache__/

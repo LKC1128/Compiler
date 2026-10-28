@@ -1,0 +1,8 @@
+float pi = 3.14159;
+int main() {
+    float r = 2.0;
+    float area = pi * r * r;
+    putfloat(area);
+    putch(10);
+    return 0;
+}
